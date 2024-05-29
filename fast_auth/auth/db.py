@@ -1,7 +1,7 @@
 import motor.motor_asyncio
-from models import UserInDB, BlacklistToken
+from fast_auth.auth.models import UserInDB, BlacklistToken
 from datetime import datetime
-from config import MONGO_USER, MONGO_PASS, MONGO_DB_NAME
+from fast_auth.config import MONGO_URI, MONGO_DB_NAME
 
 
 class MongoDB:
@@ -25,4 +25,4 @@ class MongoDB:
         token_in_blacklist = await self.blacklist_collection.find_one({"token": token})
         return token_in_blacklist is not None
 
-db = MongoDB(f"mongodb+srv://{MONGO_USER}:{MONGO_PASS}@lolproject.7vba9yt.mongodb.net/?retryWrites=true&w=majority&appName=Lolproject", f"{MONGO_DB_NAME}")
+db = MongoDB(MONGO_URI, MONGO_DB_NAME)

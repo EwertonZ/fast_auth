@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
-from models import User, UserInDB
-from db import db
-from utils import verify_password, get_password_hash, create_access_token, oauth2_scheme
+from fast_auth.auth.models import User, UserInDB
+from fast_auth.auth.db import db
+from fast_auth.auth.utils import verify_password, get_password_hash, create_access_token, oauth2_scheme
 from datetime import timedelta
 
 auth_router = APIRouter()

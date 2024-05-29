@@ -1,4 +1,0 @@
-MONGO_USER = 'ewerton'
-MONGO_PASS = 'OKP3OgzOGPMb0j1O'
-MONGO_DB_NAME = 'sistema'
-TEST = "PC"
